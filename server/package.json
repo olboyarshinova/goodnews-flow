@@ -1,0 +1,46 @@
+{
+  "name": "good-news-server",
+  "version": "1.0.0",
+  "description": "GraphQL API, RSS Parser, Playwright Scraper",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint 'src/**/*.ts' --fix"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.11.0",
+    "@graphql-tools/schema": "^10.0.33",
+    "axios": "^1.16.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.11.2",
+    "graphql": "^16.9.0",
+    "graphql-tag": "^2.12.6",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.13.0",
+    "node-cron": "^4.2.1",
+    "redis": "^5.12.1",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20.14.9",
+    "@typescript-eslint/eslint-plugin": "^8.59.2",
+    "@typescript-eslint/parser": "^8.59.2",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.14",
+    "playwright": "^1.59.1",
+    "prettier": "^3.8.3",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.4.5"
+  }
+}
