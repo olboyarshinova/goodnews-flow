@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   mongodb:
-    image: mongo:7-alpine
+    image: mongo:7
     container_name: goodnews-mongo
-    ports: ["27017:27017"]
-    volumes: [mongo-/data/db]
+    ports: ['27017:27017']
+    volumes: [mongo-data:/data/db]
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
       interval: 10s
@@ -15,8 +15,8 @@ services:
   redis:
     image: redis:7-alpine
     container_name: goodnews-redis
-    ports: ["6379:6379"]
-    volumes: [redis-/data]
+    ports: ['6379:6379']
+    volumes: [redis-data:/data]
     command: redis-server --appendonly yes
 
   server:
@@ -24,9 +24,9 @@ services:
       context: ./server
       dockerfile: Dockerfile
     container_name: goodnews-server
-    ports: ["4000:4000"]
+    ports: ['4000:4000']
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - MONGODB_URI=mongodb://mongodb:27017/goodnews
       - REDIS_URL=redis://redis:6379
       - PORT=4000
@@ -40,7 +40,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
     container_name: goodnews-client
-    ports: ["80:80"]
+    ports: ['80:80']
     depends_on: [server]
     restart: unless-stopped
 

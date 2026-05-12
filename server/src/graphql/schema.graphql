@@ -1,0 +1,15 @@
+type Query {
+    hello: String!
+    ping: String!
+    news(skip: Int = 0, take: Int = 20): [News!]!
+}
+
+type News {
+    id: ID!
+    title: String!
+    excerpt: String
+    url: String!
+    source: String!
+    category: String!
+    publishedAt: String!
+}

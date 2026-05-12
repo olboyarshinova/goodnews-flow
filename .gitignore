@@ -5,9 +5,11 @@
 /bazel-out
 
 # Node
-node_modules
+/node_modules
 npm-debug.log
 yarn-error.log
+client/node_modules/
+server/node_modules/
 
 # IDEs and editors
 .idea/
@@ -79,3 +81,11 @@ server/logs/
 .husky/_/
 .eslintcache
 .prettierignore
+
+# Build output
+dist/
+client/dist/
+
+# Angular cache
+.angular/
+client/.angular/
