@@ -35,7 +35,7 @@ jobs:
 
       - name: Type Check
         run: |
-          cd client && npx tsc --noEmit
+          cd client && npx tsc --noEmit -p tsconfig.app.json
           cd ../server && npx tsc --noEmit
 
       - name: Build Client

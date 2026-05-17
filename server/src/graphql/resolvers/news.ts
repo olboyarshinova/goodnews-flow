@@ -3,7 +3,7 @@ import type {ResolverContext} from '../../types';
 
 export const newsResolvers = {
     Query: {
-        news: async (_parent: unknown, args: { skip: number; take: number }, ctx: ResolverContext) => {
+        news: async (_parent: unknown, args: { skip: number; take: number }, _ctx: ResolverContext) => {
             try {
                 const news = await News.find()
                     .sort({ publishedAt: -1 })
@@ -23,7 +23,7 @@ export const newsResolvers = {
         createNews: async (
             _parent: unknown,
             args: { title: string; url: string; source: string; category: string; publishedAt: string },
-            ctx: ResolverContext,
+            _ctx: ResolverContext,
         ) => {
             const newNews = new News({
                 ...args,
